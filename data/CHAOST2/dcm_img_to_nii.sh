@@ -16,7 +16,7 @@ fi
 for sid in $(ls "$DATAPATH")
 do
 	echo $sid
-	./dcm2niix -o "$DATAPATH/$sid/T2SPIR" "$DATAPATH/$sid/T2SPIR/DICOM_anon";
+	/home/cepan/miniconda3/envs/fss/bin/dcm2niix -o "$DATAPATH/$sid/T2SPIR" "$DATAPATH/$sid/T2SPIR/DICOM_anon"
 	# remove all files ending with a.nii
 	# find "$DATAPATH/$sid/T2SPIR" -name "*a.nii" -exec rm {} \;
 	find "$DATAPATH/$sid/T2SPIR" -name "*.nii" -exec mv {} "$OUTPATH/T2SPIR/image_$sid.nii.gz" \;
